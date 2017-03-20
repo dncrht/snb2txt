@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'snb2txt'
+
+unless ARGV[0].end_with? '.snb'
+  STDERR.puts "Error: #{ARGV[0]} is not an .snb file"
+  exit 1
+end
+
+Snb2txt::Conversion.new(ARGV[0]).call
